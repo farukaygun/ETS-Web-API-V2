@@ -1,0 +1,6 @@
+@ETS_Web_API_V2_HostAddress = http://localhost:5265
+
+GET {{ETS_Web_API_V2_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
