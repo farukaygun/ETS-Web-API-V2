@@ -1,9 +1,8 @@
 ﻿using Contract.Base;
-using Contract.Interfaces.Repositories;
 using Data.Db_Context;
-using Data.Repositories;
+using Data.Repositories.Interfaces;
 
-namespace Data;
+namespace Data.Repositories;
 
 public class EmployeeRepository(AppDbContext context) : GenericRepository<BaseEntity>(context), IEmployeeRepository
 {

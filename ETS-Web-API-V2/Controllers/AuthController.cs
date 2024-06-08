@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Contract.Dto.Auth;
 using Contract.Interfaces.Services;
-using Contract.Models;
+using Contract.Models.Auth;
 using ETS_Web_API_V2.Validators.Auth;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
@@ -13,8 +13,7 @@ namespace ETS_Web_API_V2.Controllers
 	public class AuthController(IMapper mapper,
 		IAuthService authService) : ControllerBase
 	{
-		[HttpPost]
-		[Route("login")]
+		[HttpPost("login")]
 		public async Task<IActionResult> Login(LoginModel model)
 		{
 			var validator = new LoginValidator();
@@ -26,8 +25,7 @@ namespace ETS_Web_API_V2.Controllers
 			return Ok(response);
 		}
 
-		[HttpPost]
-		[Route("register")]
+		[HttpPost("register")]
 		public async Task<IActionResult> Register(RegisterModel model)
 		{
 			var validator = new RegisterValidator();

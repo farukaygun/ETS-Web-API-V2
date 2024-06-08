@@ -1,6 +1,6 @@
 ﻿using Contract.Enums;
 
-namespace Contract.Dto.Manager;
+namespace Contract.Dto.Common;
 
 public record GetExpenseDto
 {

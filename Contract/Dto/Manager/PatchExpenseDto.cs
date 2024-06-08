@@ -1,6 +1,6 @@
 ﻿using Contract.Enums;
 
-namespace Contract;
+namespace Contract.Dto.Manager;
 
 public record class PatchExpenseDto
 {

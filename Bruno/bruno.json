@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "ETS Web API V2",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

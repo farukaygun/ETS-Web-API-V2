@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
-using Contract.Dto.Manager;
-using Contract.Interfaces.Repositories;
+using Contract.Dto.Common;
 using Contract.Interfaces.Services;
+using Data.Repositories.Interfaces;
 
-namespace Business;
+namespace Business.Services;
 
 public class EmployeeService(IMapper mapper,
 	IUnitOfWork unitOfWork) : IEmployeeService
 {
-	public async Task PatchExpense(Guid expenseId)
+	public async Task PatchExpense(string expenseId)
 	{
 		var expense = await unitOfWork.Expenses.FindById(expenseId)
 			?? throw new ArgumentException("Expense not found!");
@@ -26,7 +26,7 @@ public class EmployeeService(IMapper mapper,
 	public async Task<List<GetExpenseDto>> GetExpensesById(string employeeId)
 	{
 		var expenses = unitOfWork.Expenses.FindByCondition(x => x.EmployeeId == employeeId);
-		
+
 		await unitOfWork.CommitAsync();
 
 		return mapper.Map<List<GetExpenseDto>>(expenses);

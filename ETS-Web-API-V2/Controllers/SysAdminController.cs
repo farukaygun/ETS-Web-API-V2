@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
-using Contract;
+using Contract.Dto.SysAdmin;
 using Contract.Interfaces.Services;
+using Contract.Models.SysAdmin;
 using ETS_Web_API_V2.Validators.SysAdmin;
 using FluentValidation;
 using Microsoft.AspNetCore.Authorization;

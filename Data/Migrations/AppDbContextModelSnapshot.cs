@@ -15,7 +15,7 @@ namespace Data.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "8.0.3");
+            modelBuilder.HasAnnotation("ProductVersion", "8.0.6");
 
             modelBuilder.Entity("Contract.Base.BaseUser", b =>
                 {
@@ -101,7 +101,7 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Entities.Expense", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
@@ -120,7 +120,6 @@ namespace Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("EmployeeId")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("IsDeleted")
@@ -301,8 +300,7 @@ namespace Data.Migrations
                     b.HasOne("Data.Entities.Employee", "Employee")
                         .WithMany("Expenses")
                         .HasForeignKey("EmployeeId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Employee");
                 });

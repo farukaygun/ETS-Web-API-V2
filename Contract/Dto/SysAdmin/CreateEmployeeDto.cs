@@ -1,4 +1,4 @@
-﻿namespace Contract;
+﻿namespace Contract.Dto.SysAdmin;
 
 public record CreateEmployeeDto
 {

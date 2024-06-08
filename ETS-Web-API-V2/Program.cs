@@ -1,18 +1,18 @@
-using System.Text;
 using Business;
+using Business.Services;
 using Common.Services;
 using Contract.Base;
-using Contract.Interfaces.Repositories;
 using Contract.Interfaces.Services;
-using Contract.Services;
 using Data.Db_Context;
 using Data.Repositories;
+using Data.Repositories.Interfaces;
 using ETS_Web_API_V2.Middlewares;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -60,12 +60,19 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddTransient<IAuthService, AuthService>();
 builder.Services.AddTransient<ITokenService, TokenService>();
+builder.Services.AddTransient<ISysAdminService, SysAdminService>();
+builder.Services.AddTransient<IManagerService, ManagerService>();
+builder.Services.AddTransient<IEmployeeService, EmployeeService>();
+builder.Services.AddTransient<IExpenseService, ExpenseService>();
 
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
+builder.Services.AddScoped<IExpenseRepository, ExpenseRepository>();
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<ISysAdminRepository, SysAdminRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

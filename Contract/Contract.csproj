@@ -8,10 +8,16 @@
 
   <ItemGroup>
     <Compile Remove="Interfaces\Repositories\**" />
+    <EmbeddedResource Remove="Interfaces\Repositories\**" />
+    <None Remove="Interfaces\Repositories\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\Repositories\" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Dto\Employee\" />
     <Folder Include="Models\Auth\" />
   </ItemGroup>
 

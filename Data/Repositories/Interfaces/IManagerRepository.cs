@@ -1,4 +1,4 @@
-﻿namespace Contract.Interfaces.Repositories;
+﻿namespace Data.Repositories.Interfaces;
 
 public interface IManagerRepository
 {

@@ -1,8 +1,8 @@
 using Contract.Base;
 
-namespace Contract.Interfaces.Repositories;
+namespace Data.Repositories.Interfaces;
 
 public interface IAuthRepository : IGenericRepository<BaseEntity>
 {
-    public Task CreateWithUserManager(BaseUser entity, string role);
+	public Task CreateWithUserManager(BaseUser entity, string role);
 }

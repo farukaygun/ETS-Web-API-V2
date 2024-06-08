@@ -1,4 +1,4 @@
-﻿namespace Contract.Models
+﻿namespace Contract.Models.Auth
 {
 	public record RegisterModel
 	{

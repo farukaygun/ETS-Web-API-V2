@@ -1,11 +1,9 @@
-﻿using Contract.Base;
-using Contract.Interfaces.Repositories;
-using Data.Db_Context;
+﻿using Data.Db_Context;
 using Data.Entities;
-using Data.Repositories;
+using Data.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace Data;
+namespace Data.Repositories;
 
 public class ExpenseRepository(AppDbContext context) : GenericRepository<Expense>(context), IExpenseRepository
 {
@@ -21,7 +19,7 @@ public class ExpenseRepository(AppDbContext context) : GenericRepository<Expense
 			.ToListAsync();
 	}
 
-	public async Task<Expense> GetManagerEmployeeExpense(string managerId, Guid expenseId)
+	public async Task<Expense> GetManagerEmployeeExpense(string managerId, string expenseId)
 	{
 		return await _context.Expenses
 			.Include(e => e.Employee)

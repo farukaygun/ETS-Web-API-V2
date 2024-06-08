@@ -1,4 +1,4 @@
-﻿using Contract.Models;
+﻿using Contract.Models.Auth;
 using FluentValidation;
 
 namespace ETS_Web_API_V2.Validators.Auth

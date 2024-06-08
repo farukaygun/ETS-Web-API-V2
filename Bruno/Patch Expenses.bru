@@ -1,0 +1,23 @@
+meta {
+  name: Patch Expenses
+  type: http
+  seq: 6
+}
+
+patch {
+  url: https://localhost:7252/api/v1/Managers/expenses
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibWFuYWdlciIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMTc0OWU0NzMtNTczZC00NmQzLTgwYzctZmVjY2JjNjE1YTE5IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiTWFuYWdlciIsIm5iZiI6MTcxNzg1Mzc2MywiZXhwIjoxNzE3ODU1NTYzLCJpc3MiOiJ3d3cudGVzdC5jb20iLCJhdWQiOiJ3d3cudGVzdC5jb20ifQ.mWcc33196DYLJSV8eAzpGaOIu-brjF5KD3n_KrCa6lM
+}
+
+body:json {
+  {
+    "expenseId": "string",
+    "status": 0,
+    "reason": "string"
+  }
+}

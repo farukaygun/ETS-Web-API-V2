@@ -1,8 +1,8 @@
-﻿namespace Contract;
+﻿namespace Contract.Models.SysAdmin;
 
-public class CreateManagerModel
+public record CreateManagerModel
 {
-	public required string UserName { get; set; }
-	public required string Email { get; set; }
-	public required string Password { get; set; }
+	public required string UserName { get; init; }
+	public required string Email { get; init; }
+	public required string Password { get; init; }
 }

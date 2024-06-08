@@ -1,4 +1,4 @@
-﻿using Contract;
+﻿using Contract.Models.SysAdmin;
 using FluentValidation;
 
 namespace ETS_Web_API_V2.Validators.SysAdmin;

@@ -1,6 +1,6 @@
 ﻿using Contract.Base;
 
-namespace Contract.Interfaces.Repositories;
+namespace Data.Repositories.Interfaces;
 
 public interface IEmployeeRepository : IGenericRepository<BaseEntity>
 {

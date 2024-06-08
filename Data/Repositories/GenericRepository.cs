@@ -1,8 +1,8 @@
-using System.Linq.Expressions;
 using Contract.Base;
-using Contract.Interfaces.Repositories;
 using Data.Db_Context;
+using Data.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace Data.Repositories
 {
@@ -15,7 +15,7 @@ namespace Data.Repositories
 				.ToListAsync();
 		}
 
-		public async Task<T> FindById(Guid id)
+		public async Task<T> FindById(string id)
 		{
 			return await context.Set<T>()
 				.Where(x => x.Id == id)

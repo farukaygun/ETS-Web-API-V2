@@ -1,12 +1,11 @@
-﻿using Business;
-using Contract.Interfaces.Services;
+﻿using Contract.Interfaces.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ETS_Web_API_V2.Controllers;
 
 [Authorize(Roles = "Employee")]
-[Route("api/[controller]s")]
+[Route("api/v1/[controller]s")]
 [ApiController]
 public class EmployeeController(IEmployeeService employeeService) : ControllerBase
 {

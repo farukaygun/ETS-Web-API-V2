@@ -1,10 +1,9 @@
-﻿using Contract.Base;
-using Data.Entities;
+﻿using Data.Entities;
 
-namespace Contract.Interfaces.Repositories;
+namespace Data.Repositories.Interfaces;
 
 public interface IExpenseRepository : IGenericRepository<Expense>
 {
-    public Task<IEnumerable<Expense>> GetEmployeeExpenses(string managerId);
-    public Task<Expense> GetManagerEmployeeExpense(string managerId, Guid expenseId);
+	public Task<IEnumerable<Expense>> GetEmployeeExpenses(string managerId);
+	public Task<Expense> GetManagerEmployeeExpense(string managerId, string expenseId);
 }

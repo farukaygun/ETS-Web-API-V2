@@ -1,7 +1,9 @@
-﻿namespace Contract.Interfaces.Services;
+﻿using Contract.Dto.SysAdmin;
+
+namespace Contract.Interfaces.Services;
 
 public interface ISysAdminService
 {
-    public Task<CreateManagerDto> CreateManagerWithUserManager(CreateManagerDto entity);
-    public Task<CreateEmployeeDto> CreateEmployeeWithUserManager(CreateEmployeeDto entity);
+	public Task<CreateManagerDto> CreateManagerWithUserManager(CreateManagerDto entity);
+	public Task<CreateEmployeeDto> CreateEmployeeWithUserManager(CreateEmployeeDto entity);
 }

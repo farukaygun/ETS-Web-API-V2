@@ -1,9 +1,9 @@
-﻿using Contract.Dto.Manager;
+﻿using Contract.Dto.Common;
 
 namespace Contract.Interfaces.Services;
 
 public interface IEmployeeService
 {
-	public Task PatchExpense(Guid expenseId);
+	public Task PatchExpense(string expenseId);
 	public Task<List<GetExpenseDto>> GetExpensesById(string employeeId);
 }

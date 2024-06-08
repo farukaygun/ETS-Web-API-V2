@@ -1,6 +1,6 @@
 ﻿using Contract.Base;
-using Contract.Interfaces.Repositories;
 using Data.Db_Context;
+using Data.Repositories.Interfaces;
 using Microsoft.AspNetCore.Identity;
 
 namespace Data.Repositories;

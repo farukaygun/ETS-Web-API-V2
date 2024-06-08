@@ -9,12 +9,12 @@ namespace Data.Entities
 		public required string Description { get; set; }
 		public required decimal Amount { get; set; }
 		public required string City { get; set; }
-		public required string EmployeeId { get; set; }
+		public string? EmployeeId { get; set; }
 
 		[ForeignKey("EmployeeId")]
 		public Employee? Employee { get; set; }
 
 		public ExpenseStatus Status { get; set; } = ExpenseStatus.Pending;
-		public string? RejectionReason { get; set; }
+		public string? Reason { get; set; }
 	}
 }

@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Contract.Base;
-using Contract.Interfaces.Repositories;
 using Data.Db_Context;
+using Data.Repositories.Interfaces;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 
 namespace Data.Repositories
 {
